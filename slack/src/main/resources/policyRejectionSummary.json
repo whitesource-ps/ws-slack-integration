@@ -1,0 +1,89 @@
+{
+  "rejectingPolicies" : [ {
+    "policyName" : "vulne",
+    "filterType" : "VULNERABILITY_SEVERITY",
+    "productLevel" : false,
+    "inclusive" : false,
+    "rejectedLibraries" : [ {
+      "name" : "snakeyaml-1.25.jar",
+      "sha1" : "8b6e01ef661d8378ae6dd7b511a7f2a33fae1421",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=ba43dbfc-b1d9-41cf-8b2a-715171851225",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\yaml\\snakeyaml\\1.25\\snakeyaml-1.25.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "undertow-core-2.0.27.Final.jar",
+      "sha1" : "f9e82bb51ca0bf56a6298be19ee8b590235ebf24",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=05aba558-a89a-4d9c-a14b-84ff56ac3ba6",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\io\\undertow\\undertow-core\\2.0.27.Final\\undertow-core-2.0.27.Final.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "undertow-websockets-jsr-2.0.27.Final.jar",
+      "sha1" : "ab8d830d71bc8caa2f8551baf2175113a20656ee",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=f51698ff-c808-44f9-864a-cbf48731c048",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\io\\undertow\\undertow-websockets-jsr\\2.0.27.Final\\undertow-websockets-jsr-2.0.27.Final.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "hibernate-core-5.4.6.Final.jar",
+      "sha1" : "a319fdf00595c7e29fba31ef23b4a58fbe333f47",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=6cca22b4-614c-4b3c-ab8b-81536a24ce09",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\hibernate\\hibernate-core\\5.4.6.Final\\hibernate-core-5.4.6.Final.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "jcommander-1.35.jar",
+      "sha1" : "47592e181b0bdbbeb63029e08c5e74f6803c4edd",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=4a75faa7-778d-4599-ad99-f48ae209017d",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\com\\beust\\jcommander\\1.35\\jcommander-1.35.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "spring-web-5.2.0.RELEASE.jar",
+      "sha1" : "d5b064196dc014519e751df549b4cc6a753fb191",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=732b81a0-5258-4cb0-9135-49aceeaec3b2",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\springframework\\spring-web\\5.2.0.RELEASE\\spring-web-5.2.0.RELEASE.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "dom4j-2.1.1.jar",
+      "sha1" : "3dce5dbb3571aa820c677fadd8349bfa8f00c199",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=59b80e5f-171f-4834-8a38-6cd3d9ba876c",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\dom4j\\dom4j\\2.1.1\\dom4j-2.1.1.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "spring-beans-5.2.0.RELEASE.jar",
+      "sha1" : "03ae97694618c59e6af695a15e54fabb7e319776",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=0302477f-932a-45c2-a023-aa6f72aa3531",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\springframework\\spring-beans\\5.2.0.RELEASE\\spring-beans-5.2.0.RELEASE.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "spring-security-web-5.2.0.RELEASE.jar",
+      "sha1" : "a9ff06ad3fd66cd08545e1a601c66d2256c86e0f",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=363084f4-53da-4bdd-bcc2-340b35ce9cae",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\springframework\\security\\spring-security-web\\5.2.0.RELEASE\\spring-security-web-5.2.0.RELEASE.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "spring-boot-2.2.0.RELEASE.jar",
+      "sha1" : "1fab3cd45761bf4ee500cfa3bbb2812648014ad0",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=e30d3a68-56da-4392-869d-87645adeb6a4",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\org\\springframework\\boot\\spring-boot\\2.2.0.RELEASE\\spring-boot-2.2.0.RELEASE.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    }, {
+      "name" : "jackson-databind-2.10.0.jar",
+      "sha1" : "1127c9cf62f2bb3121a3a2a0a1351d251a602117",
+      "link" : "https://saas.whitesourcesoftware.com/Wss/WSS.html#!libraryDetails;project=6619050;uuid=eb343f15-a1fe-49d8-8369-a18b95dcd26a",
+      "projects" : [ "Sita - 3" ],
+      "systemPath" : "C:\\Users\\NatalyaDalid\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.10.0\\jackson-databind-2.10.0.jar",
+      "manifestFile" : "C:\\TESTING-PROJECTS\\my-product_2\\project_1\\pom.xml"
+    } ]
+  } ],
+  "summary" : {
+    "totalRejectedLibraries" : 11
+  }
+}

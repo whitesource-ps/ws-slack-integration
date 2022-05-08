@@ -1,26 +1,36 @@
-[![Logo](https://whitesource-resources.s3.amazonaws.com/ws-sig-images/Whitesource_Logo_178x44.png)](https://www.whitesourcesoftware.com/)  
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CI](https://github.com/whitesource-ps/ws-tool-name/actions/workflows/ci.yml/badge.svg)](https://github.com/whitesource-ps/ws-tool-name/actions/workflows/ci.yml)
-[![Python 3.6](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Blue_Python_3.6%2B_Shield_Badge.svg/86px-Blue_Python_3.6%2B_Shield_Badge.svg.png)](https://www.python.org/downloads/release/python-360/)
-[![GitHub release](https://img.shields.io/github/v/release/whitesource-ps/ws-sbom-spdx-report)](https://github.com/whitesource-ps/ws-tool-name/releases/latest)  
-[![PyPI](https://img.shields.io/pypi/v/ws-tool-name?style=plastic)](https://pypi.org/project/ws-tool-name/)
-# [WhiteSource Tool Name](https://github.com/whitesource-ps/ws-tool-name)
-Tool description
+# WS Slack Integration Service #  
+Slack Integration Service provides pushing messaging using Slack Webhooks of the following:
+1. On-demand Security alerts (getSecurityAlerts).
+1. On-demand Policy Violation messages (checkPolicyViolations).
+1. Scheduled Security alerts (CRON style scheduling).
 
-## Supported Operating Systems
-- **Linux (Bash):**	CentOS, Debian, Ubuntu, RedHat
-- **Windows (PowerShell):**	10, 2012, 2016
-- **Docker container
+## Instructions ##
+1. Create a Slack application and an internal webhook for WhiteSource usage. More information here:(https://api.slack.com/messaging/webhooks).
+1. Download the slack-integration.jar + application.properties config file. 
+1. Fill-in the relevant parameters:
+   1. server.port: the running port of the web service [default is 8081].
+   1. slack.url: the created webhook URL for Slack [mandatory].
+   1. slack.maxResults: number of results will be presented on Slack [default is 5]. d. ws.url: WhiteSource url [mandatory. E.g:
+   https://saas.whitesourcesoftware.com].
+   1. ws.orgToken: WhiteSource org token/API key [mandatory].
+   1. ws.userKey: WhiteSource user key [mandatory].
+   1. scheduler.getSecurityAlerts: cron pattern for scheduling the security alerts job [mandatory. e.g for every day at 8 set: _* * 8 * * *_ - ].
+   1. scheduler.getSecurityAlertsEnabled: boolean for enabling/disabling the scheduled job [default is _true_].
+   1. vulnerability.minScore: minimal score (0-10) for the relevant vulnerabilities [default is _0_].
+   1. vulnerability.fromDate: minimal publish date of the vulnerability in _yyyy-MM-dd_ format.
+1. Execute: _java -jar slack-integration.jar --spring.config.location=file:///{full_path_to_config}\application.properties_
+1. Once the service is up and running, access one of the end-point operations below
+   
+## Operation  
+   1. To manually pull Organization Security Alerts, access url: http://localhost:8081/getSecurityAlerts.
+   1. To manually pull Policy Violations (based on last generated _policyRejectionSummary.txt_ by **UA** scan run), access url: http://[URL]:8081/checkPolicyViolations.
+   1. To integrate with CI/CD pipeline:
+      1. Enable the **checkPolicies** parameter in the **WS Unified Agent** (UA) config file.
+      1. During pipeline run (common after **UA** ran), call **checkPolicyViolations** with the form variables below to see if there is a violation and to decide.
+         Variables: file=<[>policyRejectionSummary.json_LOCATION>, build=, project=
+      
+    Examples:
 
-## Prerequisites
-Python 3.7+
-
-## Installation
-1. Download and unzip the tool.
-2. Install requirements: `pip install -r sbom_report/reqirements.txt`
-3. Edit the file **sbom_extra.json** with the appropriate values to complete the report:
-
-## Usage
-
-## Execution
-Execution instructions:
+      **Jenkins:** _curl http://[URL]:8081/checkPolicyViolations -v -F"file=@whitesource/policyRejectionSummary.json" -F "build=%BUILD_NUMBER%" -F "build=%BUILD_NUMBER%" -F "project=%JOB_NAME%" -F ($(Build.BuildNumber)_
+         
+      **AZDO**: _curl http://[URL]:8081/checkPolicyViolations -v -F"file=@whitesource/policyRejectionSummary.json" -F "build=%BUILD_NUMBER%" -F "build=%BUILD_NUMBER%" -F "project=%JOB_NAME%" -F $(Build.DefinitionName)_ 
