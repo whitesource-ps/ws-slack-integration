@@ -1,5 +1,6 @@
 package com.ws.api.request;
 
+import com.ws.api.model.AgentInfo;
 import com.ws.api.model.ApiRequestType;
 
 import java.io.Serializable;
@@ -16,6 +17,7 @@ public class BaseApiRequest implements Serializable {
     private String productToken;
     private String projectToken;
     private String orgToken;
+    private AgentInfo agentInfo;
 
     /* --- Constructors --- */
 
@@ -23,15 +25,18 @@ public class BaseApiRequest implements Serializable {
         this.requestType = requestType.toString();
         this.userKey = userKey;
         this.productToken = productToken;
+        this.agentInfo = new AgentInfo();
     }
 
     public BaseApiRequest(ApiRequestType requestType, String userKey) {
         this.requestType = requestType.toString();
         this.userKey = userKey;
+        this.agentInfo = new AgentInfo();
     }
 
     public BaseApiRequest(ApiRequestType type) {
         this.requestType = type.toString();
+        this.agentInfo = new AgentInfo();;
     }
 
     /* --- Getters / Setters --- */
