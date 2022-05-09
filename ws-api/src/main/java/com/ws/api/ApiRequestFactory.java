@@ -16,12 +16,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ApiRequestFactory {
 
@@ -90,8 +86,10 @@ public class ApiRequestFactory {
         } else {
             client = HttpClients.createDefault();
         }
+        String ctx =  new Random().nextInt(4) + UUID.randomUUID().toString().replace("-", "") + new Date().getTime();
         HttpPost httpPost = new HttpPost(url);
         httpPost.setHeader(CONTENT_TYPE, APPLICATION_JSON);
+        httpPost.setHeader("ctxId", ctx);
         httpPost.setEntity(new StringEntity(new Gson().toJson(request)));
         System.out.println("Sending API request: " + request.getRequestType() + " to: " + url);
         CloseableHttpResponse response = client.execute(httpPost);
