@@ -1,3 +1,6 @@
+> [!Warning]  
+**This repository has been deprecated. We will not be making any changes or enhancements to this repository. If you are actively using this utility. Please contact your Customer Success Manager to get in touch with a Mend Professional Services Engineer to discuss possible alternative solutions.**
+
 # WS Slack Integration Service #  
 Slack Integration Service provides pushing messaging using Slack Webhooks of the following:
 1. On-demand Security alerts (getSecurityAlerts).
